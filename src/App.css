@@ -36,3 +36,35 @@
     transform: rotate(360deg);
   }
 }
+
+/*
+.product-card {
+  background: yellow;
+  border: 1px solid grey;
+  border-radius: 4px;
+  margin: 5px;
+  display: inline-block;
+  width: 300px;
+  height: 100px;
+}
+
+.product-name {
+  font-family: 'Lacquer', sans-serif;
+  font-style: normal;
+  font-size: 20px;
+  line-height: 30px;
+  font-weight: bold;
+}
+
+.product-des{
+  font-family: 'Lacquer', sans-serif;
+  font-style: italic;
+  font-size: 20px;
+  line-height: 30px;
+}
+
+.product-price {
+  font-family: 'Lacquer', sans-serif;
+  color: orange;
+  font-weight: bold;
+} */
