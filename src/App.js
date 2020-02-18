@@ -13,13 +13,15 @@ const Title = (props) => {
 
 const ProductCard = (props) => {
   return (
-    <div className="card text-white bg-dark mb-3" style={{ width: 400 }}>
-      <img className="card-img-top" src={props.item.product_image} alt="Card image cap" />
-      <div className="card-body">
-        <h5 className="card-title">{props.item.product_name}</h5>
-        <p className="card-text">{props.item.product_detail}</p>
-        <p className="card-text">{props.item.price} Bath</p>
-        <a href="#" className="btn btn-primary">Go Somewhere</a>
+    <div>
+      <div class="card border-primary mb-3">
+        <img class="card-img-top" src={props.item.product_image} alt="Card image cap" />
+        <div class="card-header">{props.item.product_name}</div>
+        <div class="card-body text-primary">
+          <p class="card-text">{props.item.product_detail}</p>
+          <h5 class="card-title">{props.item.price} Bath</h5>
+          <a href="#" className="btn btn-success">Buy</a>
+        </div>
       </div>
     </div>
   )
@@ -68,16 +70,26 @@ class ProductList extends React.Component {
   render() {
     return (
       <div className="container">
-        <FormCreateProduct/>
-        <Title name={this.state.user.name}></Title>
-        <Title name="New Product"></Title>
-        <ProductCard item={this.state.products[0]} />
-        <Title name="Product List"></Title>
-        <div>
-          {this.state.products.map((product) => (
-            <ProductCard key={product.id} item={product} />
-          ))}
+        <Title name={`User: ${this.state.user.name}`} />
+        <div className="row">
+          <div className="col-sm-6">
+            <FormCreateProduct />
+          </div>
+          <div className="col-sm-6">
+            <ProductCard item={this.state.products[0]} />
+          </div>
         </div>
+        <Title name="Product list" />
+        <div className="row">
+          {this.state.products.map(
+            (product) => (
+              <div className="col-sm-3">
+                <ProductCard key={product.id} item={product} />
+              </div>
+            )
+          )}
+        </div>
+
       </div>
     )
   }
